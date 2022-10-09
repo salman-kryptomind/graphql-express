@@ -7,7 +7,6 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db";
 import cors from "cors";
 dotenv.config();
-import path from "path";
 
 const port = process.env.PORT || 5000;
 const app = express();
@@ -26,8 +25,6 @@ app.use(
     schema: schema,
   })
 );
-
-app.use(express.static("public"));
 
 //Home Endpoint
 app.get("/", (_, res) => res.send("GraphQL Server"));
